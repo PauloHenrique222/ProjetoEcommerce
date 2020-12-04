@@ -10,6 +10,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'jquery-rails'
+gem 'notifyjs_rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'

@@ -2,3 +2,10 @@
 *= require font-awesome
 *= require bootstrap_sb_admin_base_v2
 */
+
+.panel-heading{
+    height: 8vh;
+}
+.panel-heading .btn{
+    margin-top: -2px;
+}

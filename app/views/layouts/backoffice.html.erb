@@ -14,7 +14,7 @@
 
 
 <body>
-<%= render partial: "layouts/backoffice_shared/navigation" %>
+  <%= render partial: "layouts/backoffice_shared/navigation" %>
   <div id="wrapper">
     <!-- Page Content -->
     <div id="page-wrapper">
@@ -30,7 +30,12 @@
       <!-- /.container-fluid -->
     </div>
     <!-- /#page-wrapper -->
-
   </div>
+
+  <% if notice %>
+    <script>
+      $.notify("<%= notice %>", "success");
+    </script>
+  <% end %>
 </body>
 </html>
