@@ -16,7 +16,7 @@ class Backoffice::CategoriesController < ApplicationController
   def create
     @category = Category.new(params_category)
     if @category.save
-      redirect_to backoffice_categories_path, notice: "Salve success"
+      redirect_to backoffice_categories_path, notice: "Salve successfully"
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Backoffice::CategoriesController < ApplicationController
 
   def update
     if @category.update(params_category)
-      redirect_to backoffice_categories_path, notice: "Update success"
+      redirect_to backoffice_categories_path, notice: "Update successfully"
     else
       render :edit
     end
