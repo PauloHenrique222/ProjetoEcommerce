@@ -1,9 +1,11 @@
 <h1 class="page-header">List of administrators</h1>
 
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <%= link_to "New Admin", new_backoffice_admin_path, class: "btn btn-success pull-right" %>
-  </div>
+  <% if policy(@admins).new? %>
+    <div class="panel-heading">
+      <%= link_to "New Admin", new_backoffice_admin_path, class: "btn btn-success pull-right" %>
+    </div>
+  <% end %>
   <!-- /.panel-heading -->
   <div class="panel-body">
     <div class="table-responsive">
@@ -24,7 +26,7 @@
             <td><%= admin.id %></td>
             <td><%= admin.name %></td>
             <td><%= admin.email %></td>
-            <td><%= admin.role %></td>
+            <td><%= admin.role_br %></td>
             <td>
               <%= link_to edit_backoffice_admin_path(admin), class: "btn btn-primary btn-circle" do %>
                 <i class="fa fa-edit"></i>

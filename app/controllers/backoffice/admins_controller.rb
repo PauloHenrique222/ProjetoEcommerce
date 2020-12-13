@@ -5,12 +5,17 @@ class Backoffice::AdminsController < ApplicationController
 
   layout "backoffice"
 
+  def pundit_user
+    current_admin
+  end
+
   def index
-    @admins = Admin.all
+    @admins = policy_scope(Admin)
   end
 
   def new
     @admin = Admin.new
+    authorize @admin
   end
 
   def create
@@ -23,7 +28,6 @@ class Backoffice::AdminsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -45,7 +49,7 @@ class Backoffice::AdminsController < ApplicationController
   private
 
   def params_admin
-    params.require(:admin).permit(:name, :email, :password, :password_confirmation)
+    params.require(:admin).permit(policy(@admin).permitted_attributes)
   end
 
   def set_admin

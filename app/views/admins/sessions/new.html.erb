@@ -33,3 +33,9 @@
     </div>
   </div>
 </div>
+
+<% flash.each do |key, message| %>
+  <script>
+    $.notify("<%= message %>", "info");
+  </script>
+<% end %>
