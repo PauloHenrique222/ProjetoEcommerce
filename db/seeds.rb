@@ -30,3 +30,9 @@ puts("Cadastrando o Administrador padrão...")
   )
 puts("Cadastrado com sucesso!")
 
+puts("Cadastrando o membro padrão...")
+Member.create!(email: "membro@admin.com",
+              password: "123456", password_confirmation: "123456",
+)
+puts("Cadastrado com sucesso!")
+

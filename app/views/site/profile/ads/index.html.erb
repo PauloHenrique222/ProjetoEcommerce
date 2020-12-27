@@ -1,0 +1,31 @@
+<!-- Page Content -->
+<div class="container" style="min-height: 80vh">
+  <div class="row">
+    <%= render partial: "site/profile/menu_profile" %>
+    <div class="col-lg-9" style="margin-top: 30px">
+      <h1 class="text-center" style="margin-bottom: 20px">Announcement</h1>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Value</th>
+            <th></th>
+          </tr>
+        </thead>
+        <% @ads.each do |ad| %>
+          <tbody>
+           <tr>
+             <td><%= ad.id %></td>
+             <td><%= ad.title %></td>
+             <td><%= ad.category.description %></td>
+             <td><%= humanized_money_with_symbol ad.price %></td>
+             <td><%= link_to "Edit", edit_site_profile_ad_path(ad) ,class: "btn btn-primary btn-sm" %></td>
+           </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
