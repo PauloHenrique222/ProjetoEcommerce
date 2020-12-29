@@ -12,3 +12,4 @@
 //
 //= require jquery.js
 //= require rails-ujs
+//= require notifyjs_rails

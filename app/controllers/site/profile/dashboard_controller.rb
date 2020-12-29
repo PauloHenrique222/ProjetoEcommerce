@@ -5,8 +5,4 @@ class Site::Profile::DashboardController < ApplicationController
   def index
 
   end
-
-  def ads
-
-  end
 end

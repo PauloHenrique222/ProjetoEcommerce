@@ -32,15 +32,7 @@
     <!-- /#page-wrapper -->
   </div>
 
-  <% if notice %>
-    <script>
-      $.notify("<%= notice %>", "success");
-    </script>
-  <% end %>
-  <% if alert %>
-  <script>
-      $.notify("<%= alert %>", "error");
-  </script>
-<% end %>
+  <%= render partial: "layouts/shared/notifications" %>
+
 </body>
 </html>

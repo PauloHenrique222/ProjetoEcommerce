@@ -1,0 +1,12 @@
+<% if notice %>
+  <script>
+      $.notify("<%= notice %>", { className: "success",
+      globalPosition: "top right" } );
+  </script>
+<% end %>
+<% if alert %>
+  <script>
+      $.notify("<%= alert %>", { className: "error",
+          globalPosition: "top right" });
+  </script>
+<% end %>

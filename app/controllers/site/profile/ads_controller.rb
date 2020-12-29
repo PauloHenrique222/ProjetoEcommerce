@@ -13,7 +13,7 @@ class Site::Profile::AdsController < ApplicationController
 
   def update
     if @ad.update(params_ad)
-      redirect_to site_profile_ads_path
+      redirect_to site_profile_ads_path, notice: "Update successfully"
     else
       render :edit
     end
@@ -27,7 +27,7 @@ class Site::Profile::AdsController < ApplicationController
     @ad = Announcement.new(params_ad)
     @ad.member = current_member
     if @ad.save
-      redirect_to site_profile_ads_path
+      redirect_to site_profile_ads_path, notice: "Salve successfully"
     else
       render :new
     end
@@ -40,6 +40,7 @@ class Site::Profile::AdsController < ApplicationController
   end
 
   def params_ad
-    params.require(:announcement).permit(:title, :price, :category_id, :description)
+    params.require(:announcement).permit(:title,
+                                         :price, :category_id, :description, :finish_date)
   end
 end
