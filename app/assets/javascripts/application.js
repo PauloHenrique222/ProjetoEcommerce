@@ -13,3 +13,15 @@
 //= require jquery.js
 //= require rails-ujs
 //= require notifyjs_rails
+
+/* Spin */
+$(document).ready(function() {
+    // Global ajax cursor change
+    $(document)
+        .ajaxStart(function () {
+            $('#global-spin').fadeIn('slow');
+        })
+        .ajaxStop(function () {
+            $('#global-spin').fadeOut('slow');
+        });
+});

@@ -1,15 +1,15 @@
 <!-- Page Content -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-3">
+    <div id="home-sidebar" class="col-lg-3">
       <h1 class="my-4 text-center">Shop Name</h1>
       <div class="list-group">
         <% @categories.each do |category| %>
-          <a href="#" class="list-group-item"><%= category.description %></a>
+          <a href="#" class="list-group-item"><%= category.description %> (<%= category.announcements.size %>)</a>
         <% end %>
       </div>
     </div>
-    <div class="col-lg-9">
+    <div id="home-detail" class="col-lg-9">
       <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -44,7 +44,7 @@
               <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <%= link_to ad.title, site_ad_datail_path(ad) %>
+                  <%= link_to ad.title, site_ad_datail_path(ad), remote: true%>
                 </h4>
                 <h5><%= humanized_money_with_symbol ad.price %></h5>
                 <p class="card-text"><%= ad.description %></p>
