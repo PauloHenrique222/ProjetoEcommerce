@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     end
 
     resources :ad_datail, only: [:show]
+    resources :categories, only: [:show]
 
   end
 

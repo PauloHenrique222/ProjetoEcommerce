@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'notifyjs_rails'
 gem 'pundit'
 gem 'money-rails'
+gem 'friendly_id'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
 end

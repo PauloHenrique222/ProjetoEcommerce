@@ -4,5 +4,6 @@ class Site::AdDatailController < ApplicationController
 
   def show
     @ad = Announcement.find(params[:id])
+    @categories = Category.order(:description)
   end
 end
