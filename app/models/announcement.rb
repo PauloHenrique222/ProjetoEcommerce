@@ -1,6 +1,7 @@
 class Announcement < ApplicationRecord
   belongs_to :member
   belongs_to :category
+  has_many :comments
 
   monetize :price_cents
 

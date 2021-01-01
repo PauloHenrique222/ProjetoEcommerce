@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_31_184631) do
+ActiveRecord::Schema.define(version: 2021_01_01_193907) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 2020_12_31_184631) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.index ["slug"], name: "index_categories_on_slug", unique: true
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "member_id"
+    t.integer "announcement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["announcement_id"], name: "index_comments_on_announcement_id"
+    t.index ["member_id"], name: "index_comments_on_member_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
