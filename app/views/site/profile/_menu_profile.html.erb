@@ -3,5 +3,6 @@
     <%= link_to 'Dashboard', site_profile_dashboard_index_path, class: 'list-group-item' %>
     <%= link_to 'Announcement', site_profile_ads_path, class: 'list-group-item' %>
     <%= link_to 'New Announcement', new_site_profile_ad_path, class: 'list-group-item' %>
+    <%= link_to 'My data', edit_site_profile_my_datum_path(current_member.id), class: 'list-group-item' %>
   </div>
 </div>
