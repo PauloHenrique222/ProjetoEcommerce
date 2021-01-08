@@ -5,6 +5,8 @@ class Announcement < ApplicationRecord
 
   monetize :price_cents
 
+  mount_uploader :image, ImageUploader
+
   validates :title, :description, :category, :member, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0 }
 end

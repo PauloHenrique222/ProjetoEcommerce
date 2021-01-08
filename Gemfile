@@ -12,6 +12,8 @@ gem 'notifyjs_rails'
 gem 'pundit'
 gem 'money-rails'
 gem 'friendly_id'
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
 end
